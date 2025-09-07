@@ -2,41 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Healthcare SaaS Design System - Professional & Clean */
 
 @layer base {
   :root {
+    /* Healthcare Green Theme */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Healthcare Primary Green */
+    --primary: 162 85% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 162 65% 45%;
+    --primary-lighter: 162 45% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Healthcare Secondary Blue */
+    --secondary: 210 75% 92%;
+    --secondary-foreground: 210 40% 20%;
+    --healthcare-blue: 210 85% 55%;
+    --healthcare-blue-light: 210 65% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Healthcare Tones */
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 162 45% 85%;
+    --accent-foreground: 162 85% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 25% 88%;
+    --input: 210 25% 88%;
+    --ring: 162 85% 35%;
 
-    --radius: 0.5rem;
+    /* Success & Warning for Healthcare Context */
+    --success: 162 85% 35%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 95% 55%;
+    --warning-foreground: 45 30% 15%;
+
+    /* Healthcare Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(162 85% 35%), hsl(162 65% 45%));
+    --gradient-healthcare: linear-gradient(135deg, hsl(162 85% 35%), hsl(210 85% 55%));
+    --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(162 85% 35%) 0%, hsl(210 85% 55%) 50%, hsl(162 65% 45%) 100%);
+
+    /* Healthcare Shadows */
+    --shadow-soft: 0 2px 10px hsl(210 20% 85% / 0.3);
+    --shadow-medium: 0 8px 30px hsl(210 20% 70% / 0.15);
+    --shadow-strong: 0 15px 50px hsl(162 85% 35% / 0.2);
+    --shadow-glow: 0 0 30px hsl(162 85% 35% / 0.3);
+
+    --radius: 0.75rem;
+
+    /* Transitions & Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +129,36 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Healthcare Component Utilities */
+  .healthcare-gradient {
+    background: var(--gradient-healthcare);
+  }
+
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .healthcare-shadow {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .healthcare-shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .smooth-transition {
+    transition: var(--transition-smooth);
+  }
+
+  .bounce-transition {
+    transition: var(--transition-bounce);
   }
 }
